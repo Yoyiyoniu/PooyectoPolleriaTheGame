@@ -3,21 +3,41 @@ package logic;
 public class MapItem {
     private final String displayName;
     private final String itemTexture;
-    private int itemWidth;
-    private int itemHeight;
 
-    public MapItem(String displayName, String itemTexture, int itemWidth, int itemHeight) {
+    private float[] hitBox;
+
+    private int width;
+    private int height;
+
+    public MapItem(String displayName, String itemTexture, float[] hitBox, int itemWidth, int itemHeight) {
         this.displayName = displayName;
         this.itemTexture = itemTexture;
-        this.itemWidth = itemWidth;
-        this.itemHeight = itemHeight;
+        this.hitBox = hitBox;
+        this.width = itemWidth;
+        this.height = itemHeight;
     }
 
-    public void setItemWidth(int itemWidth) {
-        this.itemWidth = itemWidth;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
-    public void setItemHeight(int itemHeight) {
-        this.itemHeight = itemHeight;
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public float[] getHitBox() {
+        return hitBox;
+    }
+
+    public void setHitBox(float[] hitBox) {
+        this.hitBox = hitBox;
     }
 }

@@ -31,10 +31,6 @@ public class Player {
         }
     }
 
-    public void update(float delta) {
-        // Lógica adicional si es necesario
-    }
-
     public void dispose() {
         texture.dispose();
         if (itemHand != null) {
@@ -55,9 +51,20 @@ public class Player {
 
     public void takeItem(InteractableItem item) {
         float distance = (float) Math.sqrt(Math.pow(item.getX() - x, 2) + Math.pow(item.getY() - y, 2));
-        if (distance < 20) {
+        if (distance < 50 && itemHand == null) {
             itemHand = item;
             item.setPosition(-100, -100);
+        }
+    }
+
+    public void dropItem() {
+        if (itemHand != null) {
+            if (facingLeft) {
+                itemHand.setPosition(x - itemHand.getWidth(), y);
+            } else {
+                itemHand.setPosition(x + getWidth(), y);
+            }
+            itemHand = null;
         }
     }
 
@@ -87,5 +94,9 @@ public class Player {
 
     public float getY() {
         return y;
+    }
+
+    public InteractableItem getItemHand() {
+        return itemHand;
     }
 }
