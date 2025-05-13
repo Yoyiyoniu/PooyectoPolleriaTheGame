@@ -1,4 +1,4 @@
-package logic.utils;
+package Ui.utils;
 
 import com.badlogic.gdx.graphics.Texture;
 import org.mini2Dx.core.graphics.Graphics;

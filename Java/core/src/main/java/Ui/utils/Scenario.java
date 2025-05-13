@@ -1,7 +1,7 @@
-package logic.utils;
+package Ui.utils;
 
 import com.badlogic.gdx.Gdx;
-import logic.Floor;
+import Ui.Floor;
 import logic.Player;
 
 import java.util.List;
@@ -122,5 +122,13 @@ public class Scenario {
         float playerX = offsetX + (totalWidth / 2f) - (Player.getWidth() / 2f);
         float playerY = offsetY + (totalHeight / 2f) - (Player.getHeight() / 2f);
         player.move(playerX, playerY);
+    }
+
+    public float getOffsetX() {
+        return offsetX;
+    }
+
+    public float getOffsetY() {
+        return offsetY;
     }
 }

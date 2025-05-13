@@ -2,7 +2,7 @@ package logic;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import logic.utils.Barrier;
+import Ui.utils.Barrier;
 
 import java.util.List;
 
