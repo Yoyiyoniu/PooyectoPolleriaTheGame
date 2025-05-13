@@ -3,11 +3,11 @@ package logic;
 import com.badlogic.gdx.graphics.Texture;
 import org.mini2Dx.core.graphics.Graphics;
 
-public class InteractuableItem extends MapItem {
+public class InteractableItem extends MapItem {
     private final Texture texture;
     private float x, y; // Declarar las variables para la posición del ítem
 
-    public InteractuableItem(String displayName, String itemTexture) {
+    public InteractableItem(String displayName, String itemTexture) {
         super(displayName, itemTexture, 16, 16);
         this.texture = new Texture(itemTexture);
     }

@@ -1,6 +1,8 @@
 package Ui.utils;
 
-public class CalculeCords {
+import logic.InteractableItem;
+
+public class CalculateCords {
     public static float[] calculateRealCoordinates(float relativeX, float relativeY, float offsetX, float offsetY) {
         int textureWidth = 17;
         int textureHeight = 16;

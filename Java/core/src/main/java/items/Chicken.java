@@ -1,15 +1,12 @@
 package items;
 
-import logic.InteractuableItem;
+import logic.InteractableItem;
+import logic.Textures;
 
-public class Chicken extends InteractuableItem {
+public class Chicken extends InteractableItem {
 
     public Chicken() {
-        super("Pollo Crudo", "assets/items/r_chicken.png");
+        super("Pollo Crudo", Textures.CHICKEN.getTexture());
     }
 
-    @Override
-    public void MultiplySize(float factor) {
-        super.MultiplySize(factor * 10); // Multiplica el tamaño por un factor adicional
-    }
 }

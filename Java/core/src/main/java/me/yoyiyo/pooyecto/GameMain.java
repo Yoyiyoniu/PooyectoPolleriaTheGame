@@ -1,41 +1,41 @@
 package me.yoyiyo.pooyecto;
 
 import Ui.Floor;
-import Ui.utils.CalculeCords;
+import Ui.utils.CalculateCords;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import items.Chicken;
-import logic.InteractuableItem;
+import logic.InteractableItem;
 import logic.Movement;
 import logic.Player;
 import Ui.utils.Barrier;
 import Ui.utils.Scenario;
+import logic.Textures;
 import org.mini2Dx.core.game.BasicGame;
 import org.mini2Dx.core.graphics.Graphics;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GameMain extends BasicGame {
     public static final String GAME_IDENTIFIER = "me.yoyiyo.pooyecto";
 
     private Player p;
-    private ArrayList<Floor> grounds = new ArrayList<Floor>();
-    private ArrayList<Barrier> barriers = new ArrayList<Barrier>();
-    private Scenario scenario;
-    private ArrayList<InteractuableItem> items = new ArrayList<InteractuableItem>();
+    private final ArrayList<Floor> grounds = new ArrayList<>();
+    private final ArrayList<Barrier> barriers = new ArrayList<>();
+    private final ArrayList<InteractableItem> items = new ArrayList<>();
 
     @Override
     public void initialise() {
-        p = new Player("chicken.png", 0, 0);
+        p = new Player(Textures.PLAYER.getTexture(), 0, 0);
 
-        String groundPath = "scenario/floor.png";
+        String groundPath = Textures.FLOOR.getTexture();
 
-        scenario = new Scenario(groundPath, grounds, 55, 25, true, barriers);
+        Scenario scenario = new Scenario(groundPath, grounds, 55, 25, true, barriers);
         scenario.centerPositionPlayer(p);
 
-        items.add(new Chicken()); // Ejemplo: Agregar un pollo
-        float[] realCoords = CalculeCords.calculateRealCoordinates(5, 10, scenario.getOffsetX(), scenario.getOffsetY());
+        items.add(new Chicken());
+        float[] realCoords = CalculateCords.calculateRealCoordinates(0, 0, scenario.getOffsetX(), scenario.getOffsetY());
+
         items.get(0).setPosition(realCoords[0], realCoords[1]); // Posición inicial del ítem
     }
 
@@ -45,7 +45,7 @@ public class GameMain extends BasicGame {
         new Movement(p, delta, barriers);
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.E)) {
-            for (InteractuableItem item : items) {
+            for (InteractableItem item : items) {
                 p.takeItem(item);
             }
         }
@@ -65,8 +65,7 @@ public class GameMain extends BasicGame {
             barrier.render(g);
         }
 
-        // Renderizar los ítems
-        for (InteractuableItem item : items) {
+        for (InteractableItem item : items) {
             item.render(g);
         }
 

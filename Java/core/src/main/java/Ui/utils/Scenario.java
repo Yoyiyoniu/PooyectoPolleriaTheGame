@@ -124,11 +124,11 @@ public class Scenario {
         player.move(playerX, playerY);
     }
 
-    public float getOffsetX() {
-        return offsetX;
-    }
-
     public float getOffsetY() {
         return offsetY;
+    }
+
+    public float getOffsetX() {
+        return offsetX;
     }
 }

@@ -9,7 +9,7 @@ public class Player {
     private static final int DRAW_WIDTH = 34;
     private static final int DRAW_HEIGHT = 32;
     private boolean facingLeft = false;
-    private InteractuableItem itemHand;
+    private InteractableItem itemHand;
 
     public Player(String texturePath, float startX, float startY) {
         texture = new Texture(texturePath);
@@ -53,7 +53,7 @@ public class Player {
         y += dy;
     }
 
-    public void takeItem(InteractuableItem item) {
+    public void takeItem(InteractableItem item) {
         float distance = (float) Math.sqrt(Math.pow(item.getX() - x, 2) + Math.pow(item.getY() - y, 2));
         if (distance < 20) {
             itemHand = item;

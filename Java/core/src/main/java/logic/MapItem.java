@@ -13,24 +13,11 @@ public class MapItem {
         this.itemHeight = itemHeight;
     }
 
-    public void MultiplySize(float factor) {
-        this.itemWidth = Math.round(this.itemWidth * factor);
-        this.itemHeight = Math.round(this.itemHeight * factor);
+    public void setItemWidth(int itemWidth) {
+        this.itemWidth = itemWidth;
     }
 
-    public int getItemWidth() {
-        return itemWidth;
-    }
-
-    public int getItemHeight() {
-        return itemHeight;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public String getItemTexture() {
-        return itemTexture;
+    public void setItemHeight(int itemHeight) {
+        this.itemHeight = itemHeight;
     }
 }
