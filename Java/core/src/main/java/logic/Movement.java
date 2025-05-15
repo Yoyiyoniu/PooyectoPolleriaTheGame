@@ -2,14 +2,13 @@ package logic;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import Ui.utils.Barrier;
 
 import java.util.List;
 
 public class Movement {
     private static final float SPEED = 140f;
 
-    public Movement(Player player, float delta, List<Barrier> barriers, List<InteractableItem> items) {
+    public Movement(Player player, float delta, List<InteractableItem> items) {
         float dx = 0, dy = 0;
 
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || Gdx.input.isKeyPressed(Input.Keys.A)) {
@@ -38,15 +37,6 @@ public class Movement {
         // Verificamos colisiones con barreras
         boolean collisionX = false;
         boolean collisionY = false;
-
-        for (Barrier barrier : barriers) {
-            if (barrier.collidesWith(newX, player.getY(), Player.getWidth(), Player.getHeight())) {
-                collisionX = true;
-            }
-            if (barrier.collidesWith(player.getX(), newY, Player.getWidth(), Player.getHeight())) {
-                collisionY = true;
-            }
-        }
 
         // Verificamos colisiones con ítems
         for (InteractableItem item : items) {
