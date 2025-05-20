@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
@@ -13,7 +14,7 @@ public class Player {
 
     private Body body;
     private Texture texture;
-    private float speed = 2f; // En metros por segundo
+    private float speed = 2.5f; // En metros por segundo
 
     private boolean flipFace = false;
 
@@ -26,6 +27,11 @@ public class Player {
     protected float dashPower = 4.5f;
     protected float dashDuration = 0.2f;
     protected float dashCooldown = 0.2f;
+
+    // Shader para el efecto de dash
+    private ShaderProgram dashShader;
+    private ShaderProgram defaultShader;
+    private float elapsedTime = 0f;
 
     public Player(World world, float x, float y) {
         texture = new Texture("player.png");
@@ -40,7 +46,7 @@ public class Player {
 
         // Definir forma y fixture
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(8 / PPM, 8 / PPM); // 16x16 sprite en píxeles
+        shape.setAsBox(7 / PPM, 7 / PPM); // 16x16 sprite en píxeles
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
@@ -49,15 +55,41 @@ public class Player {
 
         body.createFixture(fixtureDef);
         shape.dispose();
+
+        // Configurar los shaders
+        ShaderProgram.pedantic = false;
+        String vertexShader = Gdx.files.internal("shader/default.vert").readString();
+        String fragmentShader = Gdx.files.internal("shader/player.frag").readString();
+        dashShader = new ShaderProgram(vertexShader, fragmentShader);
+
+        if (!dashShader.isCompiled()) {
+            Gdx.app.error("Shader", "Error compiling shader: " + dashShader.getLog());
+            // Usar shader por defecto en caso de error
+            dashShader = defaultShader;
+        }
+
+        if (!Gdx.files.internal("shader/default.vert").exists()) {
+            Gdx.app.error("Shader", "El archivo de shader vertex no existe");
+        }
+        if (!Gdx.files.internal("shader/player.frag").exists()) {
+            Gdx.app.error("Shader", "El archivo de shader fragment no existe");
+        }
+
+        defaultShader = SpriteBatch.createDefaultShader();
     }
 
     public void update() {
         float dx = 0, dy = 0;
         float deltaTime = Gdx.graphics.getDeltaTime();
+        elapsedTime += deltaTime;
 
         // Actualizar temporizadores
         if (isDashing) {
             dashTimer -= deltaTime;
+
+            // Efecto de pulso en la escala
+            float dashProgress = 1.0f - (dashTimer / dashDuration);
+
             if (dashTimer <= 0) {
                 isDashing = false;
             }
@@ -83,17 +115,17 @@ public class Player {
             dy -= 1;
         }
 
-        if (dx != 0 && dy != 0) {
-            float length = (float) Math.sqrt(dx * dx + dy * dy);
-            dx /= length;
-            dy /= length;
-        }
-
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && canDash && (dx != 0 || dy != 0)) {
             isDashing = true;
             canDash = false;
             dashTimer = dashDuration;
             cooldownTimer = dashCooldown;
+        }
+
+        if (dx != 0 && dy != 0) {
+            float length = (float) Math.sqrt(dx * dx + dy * dy);
+            dx /= length;
+            dy /= length;
         }
 
         float currentSpeed = isDashing ? speed * dashPower : speed;
@@ -105,19 +137,39 @@ public class Player {
         int width = texture.getWidth();
         int height = texture.getHeight();
 
-        batch.draw(texture,position.x * PPM - 8, position.y * PPM - 8,
-            8, 8, width, height,
-            1,1 , 0, 0,
-            0, width, height, flipFace, false);
+        ShaderProgram currentShader = batch.getShader();
 
+        if (isDashing) {
+            batch.setShader(dashShader);
+            dashShader.setUniformf("u_time", elapsedTime);
+
+            Vector2 velocity = body.getLinearVelocity();
+            dashShader.setUniformf("u_direction", velocity.x, velocity.y);
+        }
+
+        float originX = width / 2f;
+        float originY = height / 2f;
+
+        // Dibujar con rotación y escala si está haciendo dash
+        batch.draw(texture,
+                position.x * PPM - originX, position.y * PPM - originY,
+                originX, originY,
+                width, height,
+                1, 1,
+                0,
+                0, 0, width, height,
+                flipFace, false);
+
+        // Restaurar el shader original
+        batch.setShader(currentShader);
     }
 
     public void dispose() {
         texture.dispose();
+        dashShader.dispose();
     }
 
     public Body getBody() {
         return body;
     }
-
 }

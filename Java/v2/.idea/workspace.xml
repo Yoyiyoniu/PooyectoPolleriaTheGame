@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffb1924-8ce8-4d66-bd42-c4f4a06f1366" name="Changes" comment="v1 removed">
-      <change beforePath="$PROJECT_DIR$/../core/src/main/java/logic/Movement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../core/src/main/java/me/yoyiyo/pooyecto/GameMain.java" beforeDir="false" />
+    <list default="true" id="7ffb1924-8ce8-4d66-bd42-c4f4a06f1366" name="Changes" comment="add: Map Hitbox and player dash">
+      <change afterPath="$PROJECT_DIR$/assets/shader/default.vert" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/shader/player.frag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
@@ -14,22 +14,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/TiledMap/Kitchen.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/TiledMap/Kitchen.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/me/yoyiyo/pooyecto/logic/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/me/yoyiyo/pooyecto/logic/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/me/yoyiyo/pooyecto/screens/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/me/yoyiyo/pooyecto/screens/GameScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/GameScreen.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Player.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Player.class.uniqueId1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/me/yoyiyo/pooyecto/logic/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/me/yoyiyo/pooyecto/logic/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/me/yoyiyo/pooyecto/screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/me/yoyiyo/pooyecto/screens/GameScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/TiledMap/Kitchen.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/TiledMap/Kitchen.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TiledMap/Interiors_16x16.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../TiledMap/Interiors_16x16.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TiledMap/Kitchen.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../TiledMap/Kitchen.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TiledMap/TheKitchen.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/../../TiledMap/TheKitchen.tiled-session" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,22 +47,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Yoyiyoniu"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yoyiyoniu&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Yoyiyoniu/PooyectoPolleriaTheGame.git",
-    "accountId": "654d763c-bd27-4a90-b594-cbb3173491c3"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yoyiyoniu/PooyectoPolleriaTheGame.git&quot;,
+    &quot;accountId&quot;: &quot;654d763c-bd27-4a90-b594-cbb3173491c3&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2xLhvLA4ZTlVroNS6zbPN0wuyKh" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -80,6 +76,7 @@
     "Gradle.Download Sources.executor": "Run",
     "Gradle.v2:lwjgl3 [:lwjgl3:me.yoyiyo.pooyecto.lwjgl3.Lwjgl3Launcher.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -127,7 +124,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747723493255</updated>
-      <workItem from="1747723498184" duration="13781000" />
+      <workItem from="1747723498184" duration="15113000" />
+      <workItem from="1747739679438" duration="1033000" />
     </task>
     <task id="LOCAL-00001" summary="Lib gdx is better :)">
       <option name="closed" value="true" />
@@ -145,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747730019350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add: Map Hitbox and player dash">
+      <option name="closed" value="true" />
+      <created>1747738387703</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747738387703</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lib gdx is better :)" />
     <MESSAGE value="v1 removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1 removed" />
+    <MESSAGE value="add: Map Hitbox and player dash" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Map Hitbox and player dash" />
   </component>
 </project>
