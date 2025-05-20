@@ -1,0 +1,44 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Kitchen.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Interiors_16x16.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 8
+        },
+        "Kitchen.tmx": {
+            "scale": 3,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 124.33333333333333,
+                "y": 97
+            }
+        }
+    },
+    "last.imagePath": "C:/dev/PooyectoPolleriaTheGame/TiledMap",
+    "map.height": 12,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 15,
+    "openFiles": [
+        "Kitchen.tmx",
+        "Interiors_16x16.tsx"
+    ],
+    "project": "TheKitchen.tiled-project",
+    "recentFiles": [
+        "Interiors_16x16.tsx",
+        "Kitchen.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

@@ -1,0 +1,6 @@
+TiledMap/Interiors_16x16.tsx
+TiledMap/Interiors_free_16x16.png
+TiledMap/Kitchen.tmx
+TiledMap/TheKitchen.tiled-project
+TiledMap/TheKitchen.tiled-session
+player.png

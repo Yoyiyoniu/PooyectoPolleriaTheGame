@@ -1,0 +1,98 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Mapa.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Mapa.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 204,
+                "y": 192
+            }
+        },
+        "Pared.tsx": {
+            "scaleInDock": 5.5,
+            "scaleInEditor": 23
+        },
+        "Pared2.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 23
+        },
+        "Piso.tsx": {
+            "scaleInDock": 11,
+            "scaleInEditor": 1
+        },
+        "Wall3.tsx": {
+            "scaleInDock": 11,
+            "scaleInEditor": 16
+        },
+        "Wall4.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11
+        },
+        "alfombra.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 23
+        },
+        "barra.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 16
+        },
+        "compu.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 32
+        },
+        "freezer.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 1
+        },
+        "mesaGrande.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 23
+        },
+        "mesita.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 16
+        },
+        "mesota.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 16
+        }
+    },
+    "last.exportedFilePath": "C:/dev/PooyectoPolleriaTheGame",
+    "last.imagePath": "C:/dev/PooyectoPolleriaTheGame/Assets",
+    "map.lastUsedExportFilter": "Todos los archivos (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 25,
+    "openFiles": [
+        "Mapa.tmx"
+    ],
+    "project": "Cocina.tiled-project",
+    "recentFiles": [
+        "Mapa.tmx",
+        "mesaGrande.tsx",
+        "freezer.tsx",
+        "alfombra.tsx",
+        "compu.tsx",
+        "mesota.tsx",
+        "mesita.tsx",
+        "barra.tsx",
+        "Pared.tsx",
+        "Pared2.tsx",
+        "Wall4.tsx",
+        "Wall3.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.type": 0
+}
