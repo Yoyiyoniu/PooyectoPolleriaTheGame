@@ -10,7 +10,7 @@
     "fileStates": {
         "Interiors_16x16.tsx": {
             "scaleInDock": 2,
-            "scaleInEditor": 8
+            "scaleInEditor": 3
         },
         "Kitchen.tmx": {
             "scale": 3,
@@ -21,8 +21,10 @@
             }
         }
     },
+    "last.exportedFilePath": "C:/dev/PooyectoPolleriaTheGame/Java/v2/assets/TiledMap",
     "last.imagePath": "C:/dev/PooyectoPolleriaTheGame/TiledMap",
     "map.height": 12,
+    "map.lastUsedExportFilter": "Todos los archivos (*)",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,

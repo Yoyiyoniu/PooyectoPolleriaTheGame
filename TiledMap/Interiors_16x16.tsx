@@ -11,6 +11,11 @@
    <object id="1" type="InteractuableTable" x="0" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
+ <tile id="57">
+  <objectgroup draworder="index" id="2">
+   <object id="1" type="collider" x="0" y="1" width="16" height="15"/>
+  </objectgroup>
+ </tile>
  <tile id="78">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="4" y="0" width="12" height="16"/>
@@ -20,16 +25,19 @@
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="3" y="12" width="13" height="4"/>
    <object id="2" type="InteractuableTable" x="3" y="12" width="13" height="4"/>
+   <object id="3" type="collider" x="3" y="12" width="13" height="4"/>
   </objectgroup>
  </tile>
  <tile id="81">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="12" width="16" height="4"/>
+   <object id="2" type="collider" x="0" y="12" width="16" height="4"/>
   </objectgroup>
  </tile>
  <tile id="82">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="12" width="13" height="4"/>
+   <object id="2" type="collider" x="0" y="12" width="13" height="4"/>
   </objectgroup>
  </tile>
  <tile id="83">
@@ -41,47 +49,62 @@
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="3" y="0" width="13" height="16"/>
    <object id="2" type="InteractuableTable" x="3" y="0" width="13" height="16"/>
+   <object id="3" x="3" y="0" width="13" height="16"/>
+   <object id="4" type="collider" x="3" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
  <tile id="97">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
  <tile id="98">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="13" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="13" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="100">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="1.125" height="1.21094"/>
   </objectgroup>
  </tile>
  <tile id="112">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="3" y="0" width="13" height="16"/>
    <object id="2" type="InteractuableTable" x="3" y="0" width="13" height="16"/>
+   <object id="3" type="collider" x="3" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
  <tile id="114">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="13" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
  <tile id="118">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
  <tile id="128">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="3" y="0" width="13" height="16"/>
+   <object id="2" type="collider" x="3" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
  <tile id="129">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
  <tile id="130">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="13" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="13" height="16"/>
   </objectgroup>
  </tile>
  <tile id="224">
@@ -92,6 +115,7 @@
  <tile id="225">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="10" width="13" height="6"/>
+   <object id="2" x="0" y="10" width="13" height="6"/>
   </objectgroup>
  </tile>
  <tile id="240">
@@ -108,11 +132,14 @@
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="7" width="16" height="9"/>
    <object id="2" type="Wall" x="0" y="7" width="16" height="9"/>
+   <object id="3" x="0" y="7" width="16" height="9"/>
+   <object id="4" type="collider" x="0" y="7" width="16" height="9"/>
   </objectgroup>
  </tile>
  <tile id="418">
   <objectgroup draworder="index" id="2">
    <object id="1" type="Wall" x="0" y="7" width="16" height="9"/>
+   <object id="2" type="collider" x="0" y="7" width="16" height="9"/>
   </objectgroup>
  </tile>
  <tile id="432">
@@ -128,12 +155,16 @@
  <tile id="448">
   <objectgroup draworder="index" id="2">
    <object id="1" type="Wall" x="0" y="7" width="16" height="9"/>
+   <object id="2" type="collider" x="0" y="7" width="16" height="9"/>
+   <object id="3" x="0" y="7" width="16" height="9"/>
   </objectgroup>
  </tile>
  <tile id="449">
   <objectgroup draworder="index" id="2">
    <object id="1" type="Wall" x="0" y="7" width="16" height="9"/>
    <object id="2" type="Wall" x="0" y="7" width="16" height="9"/>
+   <object id="3" type="collider" x="0" y="7" width="16" height="9"/>
+   <object id="4" x="0" y="7" width="16" height="9"/>
   </objectgroup>
  </tile>
  <tile id="464">
@@ -157,24 +188,38 @@
    <object id="1" type="InteractuableTable" x="4" y="0" width="8" height="4"/>
   </objectgroup>
  </tile>
+ <tile id="1092">
+  <objectgroup draworder="index" id="2">
+   <object id="1" type="collider" x="1" y="0" width="15" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="1093">
+  <objectgroup draworder="index" id="2">
+   <object id="1" type="collider" x="0" y="0" width="15" height="16"/>
+  </objectgroup>
+ </tile>
  <tile id="1108">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
  <tile id="1109">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="16"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
  <tile id="1124">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="8"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="8"/>
   </objectgroup>
  </tile>
  <tile id="1125">
   <objectgroup draworder="index" id="2">
    <object id="1" type="InteractuableTable" x="0" y="0" width="16" height="8"/>
+   <object id="2" type="collider" x="0" y="0" width="16" height="8"/>
   </objectgroup>
  </tile>
 </tileset>

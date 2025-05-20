@@ -9,13 +9,23 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class Player {
 
-    private static final float PPM = 16f;
+    public static final float PPM = 16f;
 
     private Body body;
     private Texture texture;
     private float speed = 2f; // En metros por segundo
 
     private boolean flipFace = false;
+
+    private boolean canDash = true;
+    private boolean isDashing = false;
+
+    private float dashTimer = 0;
+    private float cooldownTimer = 0;
+
+    protected float dashPower = 4.5f;
+    protected float dashDuration = 0.2f;
+    protected float dashCooldown = 0.2f;
 
     public Player(World world, float x, float y) {
         texture = new Texture("player.png");
@@ -43,6 +53,20 @@ public class Player {
 
     public void update() {
         float dx = 0, dy = 0;
+        float deltaTime = Gdx.graphics.getDeltaTime();
+
+        // Actualizar temporizadores
+        if (isDashing) {
+            dashTimer -= deltaTime;
+            if (dashTimer <= 0) {
+                isDashing = false;
+            }
+        } else if (!canDash) {
+            cooldownTimer -= deltaTime;
+            if (cooldownTimer <= 0) {
+                canDash = true;
+            }
+        }
 
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || Gdx.input.isKeyPressed(Input.Keys.A)) {
             dx -= 1;
@@ -59,23 +83,32 @@ public class Player {
             dy -= 1;
         }
 
-        // Normalizar si se mueve en diagonal
         if (dx != 0 && dy != 0) {
             float length = (float) Math.sqrt(dx * dx + dy * dy);
             dx /= length;
             dy /= length;
         }
 
-        // NO multiplicar por delta - Box2D ya maneja el tiempo
-        body.setLinearVelocity(dx * speed, dy * speed);
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && canDash && (dx != 0 || dy != 0)) {
+            isDashing = true;
+            canDash = false;
+            dashTimer = dashDuration;
+            cooldownTimer = dashCooldown;
+        }
+
+        float currentSpeed = isDashing ? speed * dashPower : speed;
+        body.setLinearVelocity(dx * currentSpeed, dy * currentSpeed);
     }
 
     public void render(SpriteBatch batch) {
         Vector2 position = body.getPosition();
+        int width = texture.getWidth();
+        int height = texture.getHeight();
+
         batch.draw(texture,position.x * PPM - 8, position.y * PPM - 8,
-            8, 8, 16, 16,
+            8, 8, width, height,
             1,1 , 0, 0,
-            0, 16, 17, flipFace, false);
+            0, width, height, flipFace, false);
 
     }
 
