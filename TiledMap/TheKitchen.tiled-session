@@ -10,14 +10,18 @@
     "fileStates": {
         "Interiors_16x16.tsx": {
             "scaleInDock": 2,
-            "scaleInEditor": 3
+            "scaleInEditor": 8
         },
         "Kitchen.tmx": {
+            "expandedGroupLayers": [
+                10,
+                11
+            ],
             "scale": 3,
-            "selectedLayer": 8,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 124.33333333333333,
-                "y": 97
+                "x": 112.83333333333334,
+                "y": 106
             }
         }
     },

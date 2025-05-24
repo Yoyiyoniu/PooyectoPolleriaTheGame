@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.utils.Array;
+import me.yoyiyo.pooyecto.enums.Paths;
+import me.yoyiyo.pooyecto.logic.item.InteractuableItem;
 
 public class Player {
 
@@ -16,17 +19,23 @@ public class Player {
     private Texture texture;
     private float speed = 2.5f; // En metros por segundo
 
+    private InteractuableItem carriedItem;
+
+    // Estado de izquierda/derecha
     private boolean flipFace = false;
 
+    // Propiedades del dash :]
     private boolean canDash = true;
     private boolean isDashing = false;
 
     private float dashTimer = 0;
     private float cooldownTimer = 0;
 
-    protected float dashPower = 4.5f;
-    protected float dashDuration = 0.2f;
-    protected float dashCooldown = 0.2f;
+    private float dashPower = 4.5f;
+    private float dashDuration = 0.2f;
+    private float dashCooldown = 0.2f;
+
+
 
     // Shader para el efecto de dash
     private ShaderProgram dashShader;
@@ -34,7 +43,7 @@ public class Player {
     private float elapsedTime = 0f;
 
     public Player(World world, float x, float y) {
-        texture = new Texture("player.png");
+        texture = new Texture(Paths.PLAYER.getPath());
 
         // Definir el cuerpo físico
         BodyDef bodyDef = new BodyDef();
@@ -76,6 +85,7 @@ public class Player {
         }
 
         defaultShader = SpriteBatch.createDefaultShader();
+        carriedItem = null;
     }
 
     public void update() {
@@ -87,8 +97,6 @@ public class Player {
         if (isDashing) {
             dashTimer -= deltaTime;
 
-            // Efecto de pulso en la escala
-            float dashProgress = 1.0f - (dashTimer / dashDuration);
 
             if (dashTimer <= 0) {
                 isDashing = false;
@@ -172,4 +180,24 @@ public class Player {
     public Body getBody() {
         return body;
     }
+
+    public void interact(Array<InteractuableItem> items){
+        if (Gdx.input.isKeyJustPressed(Input.Keys.E)) {
+            if (carriedItem == null) {
+                // Intentar recoger un objeto
+                for (InteractuableItem item : items) {
+                    if (item.canInteract(body.getPosition()) && !item.isPickedUp()) {
+                        item.pickup();
+                        carriedItem = item;
+                        break;
+                    }
+                }
+            } else {
+                // Soltar el objeto que lleva en la dirección que mira el jugador
+                carriedItem.place(body.getPosition().x * PPM, body.getPosition().y * PPM, body.getLinearVelocity());
+                carriedItem = null;
+            }
+        }
+    }
+
 }
