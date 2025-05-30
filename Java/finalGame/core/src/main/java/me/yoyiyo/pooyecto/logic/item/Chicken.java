@@ -8,4 +8,5 @@ public class Chicken extends InteractuableItem{
     public Chicken(World world, float x, float y, String name) {
         super(world, x, y, Paths.CHICKEN.getPath(), name);
     }
+
 }

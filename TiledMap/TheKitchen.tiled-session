@@ -17,15 +17,15 @@
                 10,
                 11
             ],
-            "scale": 3,
-            "selectedLayer": 6,
+            "scale": 5.5,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 112.83333333333334,
-                "y": 106
+                "x": 154.63636363636363,
+                "y": 51.27272727272728
             }
         }
     },
-    "last.exportedFilePath": "C:/dev/PooyectoPolleriaTheGame/Java/v2/assets/TiledMap",
+    "last.exportedFilePath": "C:/dev/PooyectoPolleriaTheGame/Java/finalGame/assets/TiledMap",
     "last.imagePath": "C:/dev/PooyectoPolleriaTheGame/TiledMap",
     "map.height": 12,
     "map.lastUsedExportFilter": "Todos los archivos (*)",
@@ -39,8 +39,8 @@
     ],
     "project": "TheKitchen.tiled-project",
     "recentFiles": [
-        "Interiors_16x16.tsx",
-        "Kitchen.tmx"
+        "Kitchen.tmx",
+        "Interiors_16x16.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
